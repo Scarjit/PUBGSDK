@@ -6,9 +6,9 @@ namespace PUBGSDK.Tools
 {
     internal class Request
     {
-        public static string DoRequest(Uri url, out HttpStatusCode status_code, string key = "")
+        public static string DoRequest(Uri url, out HttpStatusCode status_code, string key = "", bool gzip = true)
         {
-            var request = WebRequest.Create(url);
+            var request = (HttpWebRequest) WebRequest.Create(url);
             if (key != "")
             {
                 request.Headers.Add("Authorization", "Bearer " + key);
@@ -17,6 +17,11 @@ namespace PUBGSDK.Tools
             request.Headers.Add("Accept", "application/vnd.api+json");
             request.Method = "GET";
 
+            if (gzip)
+            {
+                request.Headers.Add("Accept-Encoding", "gzip");
+                request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+            }
 
             WebResponse wr = null;
             try
