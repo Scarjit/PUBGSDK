@@ -17,6 +17,7 @@ namespace TestApp
             var s = new Status();
             var status = s.GetStatus();
             Console.WriteLine(status.Data.Attributes.Version);
+            
 
             //Generates a new Authorization class to hold the region and api_key
             var x = new Authorization(api_key);
@@ -51,7 +52,7 @@ namespace TestApp
             var t = new Telemetry();
             var xtelem = t.GetTelemetry(telem.First().Url);
             Console.WriteLine(xtelem.First().T);
-
+            
 
             Console.WriteLine("PRESS ENTER TO EXIT");
             Console.ReadLine();

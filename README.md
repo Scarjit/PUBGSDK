@@ -1,7 +1,8 @@
 # PUBGSDK
 
-This API allows you to interact with the pubg api at a very low level
-It only does the requests and conversion to JSON objects for you
+This API allows you to interact with the pubg api at a very low level.
+It only does the requests and conversion to JSON objects for you.
+It also caches requests so you don't hit the rate limit.
 
 ## Usage
 You can find a usage sample in the TestApp/Program.cs file

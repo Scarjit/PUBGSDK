@@ -18,7 +18,7 @@ namespace PUBGSDK
             var uri = new Uri(URL.base_url + URL.status);
 
             HttpStatusCode status;
-            var raw_match = Request.DoRequest(uri, out status);
+            var raw_match = Request.DoRequest(uri, out status, "", true, false, false);
 
             return JStatus.FromJson(raw_match);
         }
