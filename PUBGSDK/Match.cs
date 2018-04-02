@@ -18,10 +18,10 @@ namespace PUBGSDK
 
         public JMatch GetMatchById(string id)
         {
-            var uri = new Uri(URL.base_url + az.GetRegionF() + URL.match + id);
+            var uri = new Uri(URL.base_url + URL.base_extension + az.GetRegionF() + "/" + URL.match + id);
 
             HttpStatusCode status;
-            var raw_match = Request.DoRequest(uri, az.GetAPIKey(), out status);
+            var raw_match = Request.DoRequest(uri, out status, az.GetAPIKey());
 
             return JMatch.FromJson(raw_match);
         }

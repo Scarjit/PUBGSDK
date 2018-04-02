@@ -6,10 +6,14 @@ namespace PUBGSDK.Tools
 {
     internal class Request
     {
-        public static string DoRequest(Uri url, string key, out HttpStatusCode status_code)
+        public static string DoRequest(Uri url, out HttpStatusCode status_code, string key = "")
         {
             var request = WebRequest.Create(url);
-            request.Headers.Add("Authorization", "Bearer " + key);
+            if (key != "")
+            {
+                request.Headers.Add("Authorization", "Bearer " + key);
+            }
+
             request.Headers.Add("Accept", "application/vnd.api+json");
             request.Method = "GET";
 

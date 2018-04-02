@@ -61,7 +61,16 @@ namespace PUBGSDK {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://api.playbattlegrounds.com/shards/.
+        ///   Looks up a localized string similar to shards/.
+        /// </summary>
+        internal static string base_extension {
+            get {
+                return ResourceManager.GetString("base_extension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://api.playbattlegrounds.com/.
         /// </summary>
         internal static string base_url {
             get {
@@ -70,7 +79,7 @@ namespace PUBGSDK {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /matches/.
+        ///   Looks up a localized string similar to matches/.
         /// </summary>
         internal static string match {
             get {
@@ -79,7 +88,7 @@ namespace PUBGSDK {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /players/.
+        ///   Looks up a localized string similar to players/.
         /// </summary>
         internal static string player {
             get {
@@ -88,7 +97,7 @@ namespace PUBGSDK {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /players?filter[playerIds]=.
+        ///   Looks up a localized string similar to players?filter[playerIds]=.
         /// </summary>
         internal static string player_ids {
             get {
@@ -97,11 +106,20 @@ namespace PUBGSDK {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /players?filter[playerNames]=.
+        ///   Looks up a localized string similar to players?filter[playerNames]=.
         /// </summary>
         internal static string player_names {
             get {
                 return ResourceManager.GetString("player_names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to status.
+        /// </summary>
+        internal static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
             }
         }
     }

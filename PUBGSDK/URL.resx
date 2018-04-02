@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="base_extension" xml:space="preserve">
+    <value>shards/</value>
+  </data>
   <data name="base_url" xml:space="preserve">
-    <value>https://api.playbattlegrounds.com/shards/</value>
+    <value>https://api.playbattlegrounds.com/</value>
   </data>
   <data name="match" xml:space="preserve">
-    <value>/matches/</value>
+    <value>matches/</value>
   </data>
   <data name="player" xml:space="preserve">
-    <value>/players/</value>
+    <value>players/</value>
   </data>
   <data name="player_ids" xml:space="preserve">
-    <value>/players?filter[playerIds]=</value>
+    <value>players?filter[playerIds]=</value>
   </data>
   <data name="player_names" xml:space="preserve">
-    <value>/players?filter[playerNames]=</value>
+    <value>players?filter[playerNames]=</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>status</value>
   </data>
 </root>

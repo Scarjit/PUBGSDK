@@ -50,10 +50,12 @@
     <Compile Include="JClass\Matches\JMatch.cs" />
     <Compile Include="JClass\Players\Single\JPlayer.cs" />
     <Compile Include="JClass\Players\Collection\JPlayers.cs" />
+    <Compile Include="JClass\Status\JStatus.cs" />
     <Compile Include="JClass\Telemetry\JTelemetry.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Status.cs" />
     <Compile Include="Telemetry.cs" />
     <Compile Include="URL.Designer.cs">
       <AutoGen>True</AutoGen>
