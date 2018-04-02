@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>fb8788da-0e76-42bc-b5bf-ea23e3031615</ProjectGuid>
+    <ProjectGuid>{FB8788DA-0E76-42BC-B5BF-EA23E3031615}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PUBGSDK</RootNamespace>
@@ -30,24 +30,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Schema, Version=3.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Schema.3.0.10\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Authorization.cs" />
+    <Compile Include="JClass\Matches\JMatch.cs" />
+    <Compile Include="JClass\Players\Single\JPlayer.cs" />
+    <Compile Include="JClass\Players\Collection\JPlayers.cs" />
+    <Compile Include="JClass\Telemetry\JTelemetry.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Match.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telemetry.cs" />
+    <Compile Include="URL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>URL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Request.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="URL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>URL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
