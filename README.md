@@ -6,7 +6,7 @@ It also caches requests so you don't hit the rate limit.
 
 ## Usage
 You can find a usage sample in the TestApp/Program.cs file
-Each Object (except for Authorization, returns a Tuple of the parsed info and the raw info)
+Each Object (except for Authorization) returns a Tuple of the parsed info and the raw info
 
 ### Authorization
 The API_KEY and REGION are saved inside the Authorization class
