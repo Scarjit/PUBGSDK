@@ -7,14 +7,15 @@ namespace PUBGSDK
 {
     public class Telemetry
     {
-        public JTelemetry[] GetTelemetry(string url)
+        public Tuple<JTelemetry[], Request.ResponseInfo> GetTelemetry(string url)
         {
             var uri = new Uri(url);
 
             HttpStatusCode status;
-            var raw_match = Request.DoRequest(uri, out status);
-
-            return JTelemetry.FromJson(raw_match);
+            int requestsRemaining;
+            var raw_match = Request.DoRequest(uri);
+            
+            return new Tuple<JTelemetry[], Request.ResponseInfo>(JTelemetry.FromJson(raw_match.response), raw_match);
         }
     }
 }

@@ -13,14 +13,15 @@ namespace PUBGSDK
     public class Status
     {
 
-        public JStatus GetStatus()
+        public Tuple<JStatus, Request.ResponseInfo> GetStatus()
         {
             var uri = new Uri(URL.base_url + URL.status);
 
             HttpStatusCode status;
-            var raw_match = Request.DoRequest(uri, out status, "", true, false, false);
+            int requestsRemaining;
+            var raw_match = Request.DoRequest(uri, "", true, false, false);
 
-            return JStatus.FromJson(raw_match);
+            return new Tuple<JStatus, Request.ResponseInfo>(JStatus.FromJson(raw_match.response), raw_match);
         }
     }
 }

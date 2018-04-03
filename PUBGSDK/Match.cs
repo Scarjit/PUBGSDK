@@ -16,14 +16,12 @@ namespace PUBGSDK
             az = authorization;
         }
 
-        public JMatch GetMatchById(string id)
+        public Tuple<JMatch, Request.ResponseInfo> GetMatchById(string id)
         {
             var uri = new Uri(URL.base_url + URL.base_extension + az.GetRegionF() + "/" + URL.match + id);
+            var raw_match = Request.DoRequest(uri, az.GetAPIKey());
 
-            HttpStatusCode status;
-            var raw_match = Request.DoRequest(uri, out status, az.GetAPIKey());
-
-            return JMatch.FromJson(raw_match);
+            return new Tuple<JMatch, Request.ResponseInfo>(JMatch.FromJson(raw_match.response), raw_match);
         }
 
         public List<IncludedAttributes> GetTelemetry(JMatch m)
