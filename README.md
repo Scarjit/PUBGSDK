@@ -19,11 +19,11 @@ The Match class returns informations about a specifc match
 
 ```cs
 var m = new Match(authorization);
-var match = m.GetMatchById(string MATCH_ID).Item1;
+var match = m.GetMatchById(string MATCH_ID);
 
 
 //Get the telemetry data's from the match
-var telem = m.GetTelemetry(match);
+var telem = m.Item1.GetTelemetry(match);
 ```
 
 ### Player
